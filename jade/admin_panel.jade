@@ -1,0 +1,20 @@
+extends template
+
+block classes
+	- var homeclass = undefined
+	- var contactclass = undefined
+	- var aboutclass = undefined
+
+block jumbotron
+	.jumbotron
+		.container
+			h1.display-3
+				img(src='/img/judge_logo.png')
+			p Best tasks for you! Here and now!
+			p
+				a.btn.btn-primary.btn-raised(href='/aboutus.php', role='button') Learn more »
+
+block container
+	.container
+		.row
+			.col-md-4

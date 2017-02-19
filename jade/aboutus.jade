@@ -1,0 +1,28 @@
+extends template
+
+block classes
+	- var homeclass = undefined
+	- var contactclass = undefined
+	- var aboutclass = '.active'
+
+block jumbotron
+	.jumbotron
+		.container
+			h1.display-3="About"
+
+block container
+	.container
+		.panel.panel-primary
+			.panel-heading
+				h4 Author
+			.panel-body
+				.col-md-4(style='height: 450px;')
+					a.normal(href='https://tsalex.tk')
+						img(height='150px', src='/img/main.jpg')
+						h2 Alex Tsvetanov
+					br
+					h3 Team leader
+					p Developer, Contestant in Informatics
+					p Designer
+					p DataBases and Server Support
+					h3 Trainer

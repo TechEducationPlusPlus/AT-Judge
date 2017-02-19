@@ -1,0 +1,74 @@
+doctype html
+html(lang='en')
+	head
+		meta(charset='utf-8')
+		meta(http-equiv='X-UA-Compatible', content='IE=edge')
+		meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
+		
+		meta(name='description', content='Open Source Free Judge System')
+		meta(name='author', content='Alex Tsvetanov')
+		meta(name='keywords', content='Judge, Online, System, Programming, Languages, Algorithms')
+		meta(name='distribution', content='web')
+		meta(name='robots', content='index, nofollow')
+		meta(http-equiv='Content-Type', content='text/html; charset=UTF-8')
+		link(rel='icon', href='/favicon.ico')
+		title AT Judge
+		link(href='/css/jumbotron.css', rel='stylesheet')
+		link(rel='stylesheet', href='//fonts.googleapis.com/css?family=Roboto:300,400,500,700')
+		link(rel='stylesheet', href='//fonts.googleapis.com/icon?family=Material+Icons')
+		link(rel='stylesheet', href='/css/bootstrap.min.css')
+		link(rel='stylesheet', href='/css/bootstrap-material-design.min.css')
+		link(rel='stylesheet', href='/css/ripples.min.css')
+		link(rel='stylesheet', href='/css/snackbar.min.css')
+		link(rel='stylesheet', href='/css/extension.css')
+		
+	body(cz-shortcut-listen="true")
+		block classes
+		nav.navbar.navbar-fixed-top.navbar-default
+			a.navbar-brand(href='/') AT Judge
+			.navbar-collapse.collapse
+				ul.nav.navbar-nav.navbar-left
+					li.nav-item(class=typeof homeclass === "undefined" ? "" : "active")
+						a.nav-link(href='/') Home
+					li.nav-item(class=typeof contactclass === "undefined" ? "" : "active")
+						a.nav-link(href='/contactus.php') Contact
+					li.nav-item(class=typeof aboutclass === "undefined" ? "" : "active")
+						a.nav-link(href='/aboutus.php') About
+				ul.nav.navbar-nav.navbar-right
+					li.nav-item(class=typeof loginclass === "undefined" ? "" : "active")
+						a.nav-link(href='/login.php') Login
+					li.nav-item
+						a.nav-link(href='/logout.php') Logout
+					li.nav-item(class=typeof registerclass === "undefined" ? "" : "active")
+						a.nav-link(href='/register.php') Register
+					li.nav-item(class=typeof homeclass === "undefined" ? "" : "active", style="border-right: rgba(0,0,0,0) solid 20px;")
+						a.nav-link(href='/user.php') 
+							| Hi
+							| <?php 
+							| if (isset($_COOKIE ["name"])) 
+							| {
+							|	echo ", "; 
+							|	echo $_COOKIE ["name"];
+							| } 
+							| ?>
+		div(style="height: 50px")
+		block jumbotron
+			
+		block container
+			
+		hr
+		footer
+			center 
+				p 
+					| <?php 
+					| require ($_SERVER["DOCUMENT_ROOT"] . "/content/copyrights.php");
+					| ?>
+
+		script(src='/js/jquery.min.js')
+		script(src="/js/tether.min.js")
+		script(src='/js/bootstrap.min.js')
+		script(src="/js/material.min.js")
+		script(src="/js/ripples.min.js")
+		script(src="/js/snackbar.min.js")
+		script(src="/js/jquery.nouislider.min.js")
+		script(src='/js/main.js')

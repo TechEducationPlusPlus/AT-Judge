@@ -1,0 +1,39 @@
+extends template
+
+block classes
+	- var homeclass = ".active";
+	- var contactclass = undefined;
+	- var aboutclass = undefined;
+
+block jumbotron
+	.jumbotron
+		.container
+			h1.display-3
+				img(src='/img/judge_logo.png')
+			p Best tasks for you! Here and now!
+			p
+				a.btn.btn-primary.btn-lg(href='/aboutus.php', role='button') Learn more »
+block container
+	.container
+		.row
+			.col-xs-12.col-sm-12.col-md-6.col-lg-6.col-xs-offset-0.col-sm-offset-0.col-md-offset-3.col-lg-offset-3.toppad
+				.panel.panel-info
+					.panel-heading(style="background-color: #FF6A00; color: black;")
+						h3.panel-title {{name}}
+					.panel-body
+						.row
+							.col-md-3.col-lg-3(align='center')
+								img.img-circle.img-responsive(alt='User Pic', src='{{pic}}')
+							.col-md-9.col-lg-9
+								table.table.table-user-information
+									tbody
+										tr
+											td Email
+											td
+												a(href='mailto:{{mail}}') {{mail}}
+					.panel-footer
+						a.btn.btn-sm.btn-primary(data-original-title='Broadcast Message', data-toggle='tooltip', type='button')
+							i.glyphicon.glyphicon-envelope
+						span.pull-right
+							a.btn.btn-sm.btn-warning(href='edit.html', data-original-title='Edit this user', data-toggle='tooltip', type='button')
+								i.glyphicon.glyphicon-edit

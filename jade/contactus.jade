@@ -1,0 +1,25 @@
+extends template
+
+block classes
+	- var homeclass = undefined
+	- var contactclass = '.active'
+	- var aboutclass = undefined
+
+block jumbotron
+	.jumbotron
+		.container
+			h1.display-3="Contact"
+
+block container
+	.container
+		.panel.panel-primary
+			.panel-heading
+				h4 Author
+			.panel-body
+				.col-md-4(style='height: 450px;')
+					img(height='150px', src='/img/main.jpg')
+					h2 Alex Tsvetanov
+					h3 E-mail: 
+						a(href="mailto:alex@tsalex.tk") alex@tsalex.tk
+					h3 Tel:
+						a(href="tel:+359988329931") +359-988-32-99-31
