@@ -1,11 +1,6 @@
 a.normal{color:#373a3c;}
 a.normal:visited{color:#373a3c;}
 a.normal:hover{color:#373a3c;}
-.btn.btn-raised.btn-secondary{background-color:orange;color:black;}
-.btn.btn-raised.btn-secondary:hover{background-color:green !important;color:white !important;}
-.btn.btn-raised.btn-primary{background-color:green !important;color:white !important;}
-.btn.btn-raised.btn-primary:hover{background-color:orange !important;color:black !important;}
-/*h3{color: white !important;}*/
 .col-md-3>h2 {
 	height: 100px;
 }
@@ -13,11 +8,11 @@ a.normal:hover{color:#373a3c;}
 	height: 245px;
 }
 .col-md-4 {
-	/*width: 31.33333333% !important;*/
+	width: 31.33333333% !important;
 	border-radius: 5px !important;
-	box-shadow: 0 0 10px #808080;
-	margin: 10px;
-	padding: 1px 10px 1px; 
+}
+.col-md-4 h2 {
+	font-weight: bold;
 }
 footer {
 	color: gray;
@@ -27,13 +22,12 @@ footer {
 	background-color: transparent;
 }
 .jumbotron {
-	/*background-color:white;*/
-	color: black;
-}
-body {
-	/*background-image: url('/new.jpg');*/
-	/*background-color: rgba(256, 256, 256, 1);*/
+	background-image: url('/maia.png');
+	color: white;
 }
 .btn.btn-success, .btn.btn-success:hover, .btn.btn-success:focus  {
 	background-color: #009688 !important;
+}
+label {
+	color: black !important;
 }

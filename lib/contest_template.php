@@ -13,7 +13,7 @@
     <meta https-equiv="Content-Type" content="text/html; charset=UTF-8">
     <link rel="icon" href="/favicon.ico">
     <title>AT Judge</title>
-	<link href="/node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet"><link href="/css/jumbotron.css" rel="stylesheet"><script src="/node_modules/jquery/dist/jquery.min.js"></script><script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+	<link href="/css/jumbotron.css" rel="stylesheet"><link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700"><link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons"><link rel="stylesheet" href="/css/bootstrap.min.css"><link rel="stylesheet" href="/css/bootstrap-material-design.min.css"><link rel="stylesheet" href="/css/ripples.min.css"><link rel="stylesheet" href="/css/snackbar.min.css"><link rel="stylesheet" href="/css/extension.css">
 	
 	<link rel="stylesheet" href="https://codemirror.net/lib/codemirror.css">
 	<link rel="stylesheet" href="https://codemirror.net/theme/lesser-dark.css">
@@ -21,6 +21,12 @@
 	<script src="https://codemirror.net/mode/javascript/javascript.js"></script>
 	<script src="https://codemirror.net/addon/fold/foldcode.js"></script>
 	<script src="https://codemirror.net/mode/clike/clike.js"></script>
+
+	<style>
+		#tasks>nav>ul>li:nth-child(2n+1) {
+			background-color: #1AA194;
+		}
+	</style>
 </head>
 
 <body>
@@ -48,7 +54,9 @@
 	<div class="container">
         <div class="row">
             <div class="col-md-10">
+				<span id="tasks">
 				{{tasks}}
+				</span>
 				<hr>
                 <form enctype="multipart/form-data" action="/submission.php" method="POST" onsubmit="return validateForm()">
                     <div class="form-group">
@@ -64,17 +72,18 @@
                             <label for="sourcecode">your source code</label>
                             <textarea id="sourcecode" name="sourcecode" rows="20" autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" wrap="on" class="form-control"></textarea>
                         </div>
+						<div class="form-group">
+							<label class="control-label" for="uploadedfile">Source code file</label>
+							<input id="uploadedfile" type="file">
+							<input readonly="" class="form-control" placeholder="Browse..." type="text">
+						</div>
                     </fieldset>
-					<div class="form-group">
-						<label for="sourcecode">Choose a file to upload:</label>
-						<input name="uploadedfile" type="file" class="form-control">
-					</div>
                     <div class="form-group">
                         <label for="lang">Language</label>
                         <select id="lang" name="lang" class="form-control" onchange="change();"></select>
                     </div>
                     <input type="hidden" name="contest" value="{{contestid}}">
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="submit" class="btn btn-raised btn-success">Submit</button>
                 </form>
 				<div id="test" style="display:none;"> </div>
             </div>
@@ -89,6 +98,7 @@
             <p>Copyrights © Alex Tsvetanov 2016-2017</p>
         </center>
     </footer>
+	<script src="/js/jquery.min.js"></script><script src="/js/tether.min.js"></script><script src="/js/bootstrap.min.js"></script><script src="/js/material.min.js"></script><script src="/js/ripples.min.js"></script><script src="/js/snackbar.min.js"></script><script src="/js/jquery.nouislider.min.js"></script><script src="/js/main.js"></script>
 	<script>
 		function validateForm() {
 			var x = document.forms[0]["email"].value;
@@ -130,7 +140,7 @@
 			CodeMirror.modeURL = "https://codemirror.net/mode/%N/%N.js";
 			editor = CodeMirror.fromTextArea(document.getElementById("sourcecode"), {
 				mode: "text/x-c++src",
-				theme: "lesser-dark",
+				theme: "default",
 				lineNumbers: true,
 				lineWrapping: true
 			});
@@ -139,9 +149,3 @@
 </body>
 
 </html>
-<!--
-			<div class="alert alert-dismissable alert-success" id="success">
-				<button type="button" class="close" data-dismiss="alert" onclick="document.getElementById ('success').style = 'display: none !important;';">×</button>
-				<strong>Success!</strong> You submit solution successfully.
-			</div>
--->

@@ -25,15 +25,18 @@ html(lang='en')
 	body(cz-shortcut-listen="true")
 		block classes
 		nav.navbar.navbar-fixed-top.navbar-default
-			a.navbar-brand(href='/') AT Judge
-			.navbar-collapse.collapse
-				ul.nav.navbar-nav.navbar-left
+			a.navbar-brand(href='/') TechEdu ++
+			.navbar-collapse.collapse.navbar-responsive-collapse
+				ul.nav.navbar-nav
 					li.nav-item(class=typeof homeclass === "undefined" ? "" : "active")
 						a.nav-link(href='/') Home
 					li.nav-item(class=typeof contactclass === "undefined" ? "" : "active")
 						a.nav-link(href='/contactus.php') Contact
 					li.nav-item(class=typeof aboutclass === "undefined" ? "" : "active")
 						a.nav-link(href='/aboutus.php') About
+				form.navbar-form.navbar-left(role="search", action="/search")
+					.form-group.is-empty
+						input.form-control.col-md-8(placeholder='Search', type='text')
 				ul.nav.navbar-nav.navbar-right
 					li.nav-item(class=typeof loginclass === "undefined" ? "" : "active")
 						a.nav-link(href='/login.php') Login

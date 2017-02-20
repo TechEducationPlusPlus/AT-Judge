@@ -13,7 +13,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <link rel="icon" href="/favicon.ico">
     <title>AT Judge</title>
-	<link href="/node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet"><link href="/css/jumbotron.css" rel="stylesheet"><script src="/node_modules/jquery/dist/jquery.min.js"></script><script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+	<link href="/css/jumbotron.css" rel="stylesheet"><link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700"><link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons"><link rel="stylesheet" href="/css/bootstrap.min.css"><link rel="stylesheet" href="/css/bootstrap-material-design.min.css"><link rel="stylesheet" href="/css/ripples.min.css"><link rel="stylesheet" href="/css/snackbar.min.css"><link rel="stylesheet" href="/css/extension.css">
 	
 	<link rel="stylesheet" href="https://codemirror.net/lib/codemirror.css">
 	<link rel="stylesheet" href="https://codemirror.net/theme/lesser-dark.css">
@@ -39,11 +39,10 @@
             </ul>
         </div>
     </nav>
+	<div style="height: 50px"></div>
     <div class="jumbotron">
         <div class="container">
-            <h1 class="display-3"><img src="/img/judge_logo.png"><br><br><span>Submit {{ID}}</span></h1>
-            <p>Best tasks for you! Here and now!</p>
-            <p><a href="/aboutus.php" role="button" class="btn btn-primary btn-lg">Learn more »</a></p>
+			<h1 class="display-3"><span>Submit {{ID}}</span></h1>
         </div>
     </div>
     <div class="container">
@@ -81,6 +80,7 @@
             </p>
         </center>
     </footer>
+	<script src="/js/jquery.min.js"></script><script src="/js/tether.min.js"></script><script src="/js/bootstrap.min.js"></script><script src="/js/material.min.js"></script><script src="/js/ripples.min.js"></script><script src="/js/snackbar.min.js"></script><script src="/js/jquery.nouislider.min.js"></script><script src="/js/main.js"></script>
 	<script>
 		var editor, code;
 		var modes = {
@@ -106,14 +106,14 @@
 			CodeMirror.modeURL = "https://codemirror.net/mode/%N/%N.js";
 			editor = CodeMirror.fromTextArea(document.getElementById("sourcecode"), {
 				mode: modes ["{{lang}}"],
-				theme: "lesser-dark",
+				theme: "default",
 				lineNumbers: true,
 				lineWrapping: true,
 				readOnly: true
 			});
 			var editor2 = CodeMirror.fromTextArea(document.getElementById("compile"), {
 				mode: modes ["text/plain"],
-				theme: "lesser-dark",
+				theme: "default",
 				lineWrapping: true,
 				readOnly: true
 			});

@@ -1,0 +1,1 @@
+while true; do ./worker.exe ; done
