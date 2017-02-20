@@ -12,7 +12,7 @@
 	{
 		while($row = $result->fetch_assoc()) 
 		{
-			echo '<div class="col-md-4"><h2 id=' . $row["ID"] . '>' . $row["Name"] . '</h2><p><a href="' . $row["Link"] . '" role="button" class="btn btn-raised btn-success">Complete »</a></p>' . '<p><a href="' . $row["Link"] . '/results" role="button" class="btn btn-default active">View results »</a></p></div>';
+			echo '<div class="col-md-4"><h2 id=' . $row["ID"] . '>' . $row["Name"] . '</h2><p><a href="' . $row["Link"] . '" role="button" class="btn btn-raised btn-success">Compete »</a></p>' . '<p><a href="' . $row["Link"] . '/results" role="button" class="btn btn-default active">View results »</a></p></div>';
 		}
 	} 
 	unset($conn);

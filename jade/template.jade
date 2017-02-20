@@ -38,22 +38,13 @@ html(lang='en')
 					.form-group.is-empty
 						input.form-control.col-md-8(placeholder='Search', type='text')
 				ul.nav.navbar-nav.navbar-right
-					li.nav-item(class=typeof loginclass === "undefined" ? "" : "active")
-						a.nav-link(href='/login.php') Login
-					li.nav-item
-						a.nav-link(href='/logout.php') Logout
+					li.nav-item(id="login", class=typeof loginclass === "undefined" ? "" : "active")
 					li.nav-item(class=typeof registerclass === "undefined" ? "" : "active")
 						a.nav-link(href='/register.php') Register
 					li.nav-item(class=typeof homeclass === "undefined" ? "" : "active", style="border-right: rgba(0,0,0,0) solid 20px;")
 						a.nav-link(href='/user.php') 
-							| Hi
-							| <?php 
-							| if (isset($_COOKIE ["name"])) 
-							| {
-							|	echo ", "; 
-							|	echo $_COOKIE ["name"];
-							| } 
-							| ?>
+							|Hi
+							|<?php if (isset($_COOKIE ["name"])) { echo ", "; echo $_COOKIE ["name"]; } ?>
 		div(style="height: 50px")
 		block jumbotron
 			
@@ -74,4 +65,5 @@ html(lang='en')
 		script(src="/js/ripples.min.js")
 		script(src="/js/snackbar.min.js")
 		script(src="/js/jquery.nouislider.min.js")
+		script(src='/js/jquery.cookie.js')
 		script(src='/js/main.js')

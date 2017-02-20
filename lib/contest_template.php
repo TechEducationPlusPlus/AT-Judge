@@ -38,8 +38,7 @@
                 <li class="nav-item"><a href="/aboutus.php" class="nav-link">About</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li class="nav-item"><a href="/login.php" class="nav-link">Login</a></li>
-                <li class="nav-item"><a href="/logout.php" class="nav-link">Logout</a></li>
+                <li class="nav-item" id="login"></li>
                 <li class="nav-item"><a href="/register.php" class="nav-link">Register</a></li>
                 <li style="border-right: rgba(0,0,0,0) solid 20px;" class="nav-item active"><a href="/user.php" class="nav-link">Hi<?php if (isset($_COOKIE ["name"])){echo ", "; echo $_COOKIE ["name"];} ?></a></li>
             </ul>
@@ -98,7 +97,7 @@
             <p>Copyrights © Alex Tsvetanov 2016-2017</p>
         </center>
     </footer>
-	<script src="/js/jquery.min.js"></script><script src="/js/tether.min.js"></script><script src="/js/bootstrap.min.js"></script><script src="/js/material.min.js"></script><script src="/js/ripples.min.js"></script><script src="/js/snackbar.min.js"></script><script src="/js/jquery.nouislider.min.js"></script><script src="/js/main.js"></script>
+	<script src="/js/jquery.min.js"></script><script src="/js/tether.min.js"></script><script src="/js/bootstrap.min.js"></script><script src="/js/material.min.js"></script><script src="/js/ripples.min.js"></script><script src="/js/snackbar.min.js"></script><script src="/js/jquery.nouislider.min.js"></script><script src="/js/jquery.cookie.js"></script><script src="/js/main.js"></script>
 	<script>
 		function validateForm() {
 			var x = document.forms[0]["email"].value;

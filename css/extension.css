@@ -8,7 +8,6 @@ a.normal:hover{color:#373a3c;}
 	height: 245px;
 }
 .col-md-4 {
-	width: 31.33333333% !important;
 	border-radius: 5px !important;
 }
 .col-md-4 h2 {
@@ -27,7 +26,4 @@ footer {
 }
 .btn.btn-success, .btn.btn-success:hover, .btn.btn-success:focus  {
 	background-color: #009688 !important;
-}
-label {
-	color: black !important;
 }
