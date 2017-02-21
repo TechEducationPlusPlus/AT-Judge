@@ -9,6 +9,7 @@ a.normal:hover{color:#373a3c;}
 }
 .col-md-4 {
 	border-radius: 5px !important;
+	box-shadow: 0 0 10px #808080; margin: 10px; padding: 1px 10px 1px; 
 }
 .col-md-4 h2 {
 	font-weight: bold;
@@ -26,4 +27,14 @@ footer {
 }
 .btn.btn-success, .btn.btn-success:hover, .btn.btn-success:focus  {
 	background-color: #009688 !important;
+}
+
+body {
+	background-color: #DDD !important;
+}
+label {
+	color: #777!important;
+}
+.container>.row {
+	background-color: white;
 }

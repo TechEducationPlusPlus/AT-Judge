@@ -27,7 +27,7 @@
 	}
 	else
 	{
-		$_GET['_uri'] = $_SERVER['REQUEST_URI'];
+		$_GET['_uri'] = $_SERVER['REQUEST_URI'] . '.php';
 		return false;
 	}
 ?>

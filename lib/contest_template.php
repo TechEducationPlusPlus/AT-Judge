@@ -52,7 +52,7 @@
     </div>
 	<div class="container">
         <div class="row">
-            <div class="col-md-10">
+            <div class="col-md-12" style="padding-right: 45px !important; padding-left: 45px !important;">
 				<span id="tasks">
 				{{tasks}}
 				</span>
@@ -69,8 +69,10 @@
                         <legend>Submit:</legend>
                         <div class="form-group">
                             <label for="sourcecode">your source code</label>
-                            <textarea id="sourcecode" name="sourcecode" rows="20" autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" wrap="on" class="form-control"></textarea>
-                        </div>
+							<div style="border: 2pt solid #777;">
+                            <textarea id="sourcecode" name="sourcecode" rows="20" autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" wrap="on" class="form-control" style="border: 1px solid black;"></textarea>
+							</div>
+						</div>
 						<div class="form-group">
 							<label class="control-label" for="uploadedfile">Source code file</label>
 							<input id="uploadedfile" type="file">
@@ -86,7 +88,7 @@
                 </form>
 				<div id="test" style="display:none;"> </div>
             </div>
-			<div class="col-md-10">
+            <div class="col-md-12" style="padding-right: 45px !important; padding-left: 45px !important;">
 				{{submits}}
 			</div>
         </div>

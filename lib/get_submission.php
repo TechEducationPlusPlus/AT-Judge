@@ -11,6 +11,11 @@
 	if ($result->num_rows == 1) 
 	{
 		$row = $result->fetch_assoc();
+		if ($row["UserID"] != $_COOKIE["email"] and $_COOKIE["admin"] != "1")
+		{
+			echo "You are CHEATER";
+			return;
+		}	
 		$html_code = implode ('', file (__DIR__ . '/submit_template.php'));
 		if (isset ($_COOKIE["name"]))
 			$html_code = str_replace ('Hi', 'Hi, ' . $_COOKIE["name"], $html_code);
