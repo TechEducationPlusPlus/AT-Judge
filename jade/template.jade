@@ -30,11 +30,11 @@ html(lang='en')
 			.navbar-collapse.collapse.navbar-responsive-collapse
 				ul.nav.navbar-nav
 					li.nav-item(class=typeof homeclass === "undefined" ? "" : "active")
-						a.nav-link(href='/') Home
+						a.nav-link(href=typeof homeclass === "undefined" ? '/' : "#") Home
 					li.nav-item(class=typeof contactclass === "undefined" ? "" : "active")
-						a.nav-link(href='/contactus.php') Contact
+						a.nav-link(href=typeof contactclass === "undefined" ? '/contactus.php' : "#") Contact
 					li.nav-item(class=typeof aboutclass === "undefined" ? "" : "active")
-						a.nav-link(href='/aboutus.php') About
+						a.nav-link(href=typeof aboutclass === "undefined" ? '/aboutus.php' : "#") About
 				form.navbar-form.navbar-left(role="search", action="/search")
 					.form-group.is-empty
 						input.form-control.col-md-8(placeholder='Search', type='text')
