@@ -11,7 +11,7 @@
     <meta name="distribution" content="web">
     <meta name="robots" content="index, nofollow">
     <meta https-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <link rel="icon" href="/favicon.ico">
+    <link rel="icon" href="/favicon.png">
     <title>AT Judge</title>
 	<link href="/css/jumbotron.css" rel="stylesheet"><link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700"><link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons"><link rel="stylesheet" href="/css/bootstrap.min.css"><link rel="stylesheet" href="/css/bootstrap-material-design.min.css"><link rel="stylesheet" href="/css/ripples.min.css"><link rel="stylesheet" href="/css/snackbar.min.css"><link rel="stylesheet" href="/css/extension.css">
 	
