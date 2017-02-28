@@ -10,7 +10,6 @@
 		$sql = "SELECT * FROM `Submissions` WHERE `Points` IS NULL";
 		$result = $conn->query($sql);
 
-		echo "Test";
 		$html_code = implode ('', file ($_SERVER["DOCUMENT_ROOT"] . '/lib/queue_template.php'));
 		if (isset ($_COOKIE["name"]))
 			$html_code = str_replace ('Hi', 'Hi, ' . $_COOKIE["name"], $html_code);
