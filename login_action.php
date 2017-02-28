@@ -10,7 +10,7 @@
 
 	$conn = new MySQL ($dbname);
 
-	$sql = "SELECT * FROM Users";
+	$sql = "SELECT * FROM Users WHERE `Username`=\"{$_REQUEST['ID']}\" OR `Email`=\"{$_REQUEST["ID"]}\"";
 	$result = $conn->query($sql);
 
 	if ($result->num_rows > 0) 
@@ -37,7 +37,7 @@
         setcookie("email", $email, time() + (86400 * 30), "/");
         setcookie("username", $ID, time() + (86400 * 30), "/");
         setcookie("ID", $number, time() + (86400 * 30), "/");
-        header('location: /index.php');
+        header('location: /');
     }
     else
     {

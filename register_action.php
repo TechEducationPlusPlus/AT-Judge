@@ -6,7 +6,7 @@
 
 	$conn = new MySQL ($dbname);
 
-	$sql = "SELECT * FROM Users";
+	$sql = "SELECT * FROM Users WHERE `Username`=\"{$_REQUEST['Username']}\" OR `Email`=\"{$_REQUEST["Email"]}\"";
 	$result = $conn->query($sql);
 	$num_of_users = $result->num_rows;
 

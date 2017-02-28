@@ -35,9 +35,9 @@ html(lang='en')
 						a.nav-link(href=typeof contactclass === "undefined" ? '/contactus.php' : "#") Contact
 					li.nav-item(class=typeof aboutclass === "undefined" ? "" : "active")
 						a.nav-link(href=typeof aboutclass === "undefined" ? '/aboutus.php' : "#") About
-				form.navbar-form.navbar-left(role="search", action="/search")
+				form.navbar-form.navbar-left(role="search", action="/search.php")
 					.form-group.is-empty
-						input.form-control.col-md-8(placeholder='Search', type='text')
+						input.form-control.col-md-8(placeholder='Search', name="pattern", type='text')
 				ul.nav.navbar-nav.navbar-right
 					li.nav-item(id="login", class=typeof loginclass === "undefined" ? "" : "active")
 					li.nav-item(class=typeof registerclass === "undefined" ? "" : "active")
