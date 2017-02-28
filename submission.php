@@ -12,7 +12,7 @@
 	//echo "<br><hr><br>";
 	$CONTEST = $_REQUEST["contest"];
 	$USER = $_REQUEST["email"];
-	if ($conn->query ("SELECT * FROM `Users` WHERE {$USER}")->num_rows != 1)
+	if ($conn->query ("SELECT * FROM `Users` WHERE `Email`='{$USER}'")->num_rows == 0)
 	{
 		echo '<script>alert("Don\'t cheat! Haven\'t got any user with that email!"); window.location = "/queue";</script>';
 	}
