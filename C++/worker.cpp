@@ -37,8 +37,8 @@ int getFree ()
 	return -1;
 }
 
-const string tl_error = "Time limit exceeded\n";
-const string signal_11 = "Caught fatal signal 11\n";
+const string tl_error = "124\n";//"Time limit exceeded\n";
+const string signal_11 = "11\n";//"Caught fatal signal 11\n";
 const string compile_error = "Compilation error";
 
 void eval (submit curr, size_t boxId)
@@ -115,7 +115,7 @@ if (!skip)
 			}
 			string signal;
 			{
-				signal = free_boxes [boxId].doIsolatedCommand ("./source.exe", string ("-t ") + string (curr.task_row [9]) + string (" -m ") + string (curr.task_row [10]) + string (" -i in -o outB"));
+				signal = free_boxes [boxId].doIsolatedCommand (string (" ./source.exe"), string (curr.task_row [9]), string (curr.task_row [10]), string ("in"), string ("outB"));
 				cout << signal << " == " << tl_error << "\n";
 
 				{

@@ -15,11 +15,11 @@ map <string, function <string(string)> > langs = {
 			return "/usr/bin/gcc " + path + "source.c -o " + path + "source.exe -Wall -Wextra -std=c11 -O2 -lm -static";
 		}
 	},
-	{"cs", 
+	{"py", 
 	
 		[](string path)
 		{
-			return "/usr/bin/mcs " + path + "source.cs";
+			return "echo \"#!/usr/bin/env python\" > new_source.py; cat " + path + "source.py >> new_source.py; mv new_source.py " + path + "source.exe; chmod +x " + path + "source.exe";
 		}
 	},
 };
