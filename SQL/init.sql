@@ -58,7 +58,7 @@ CREATE TABLE `Contests` (
 --
 
 INSERT INTO `Contests` (`ID`, `Name`, `Link`, `Tasks`, `Langs`, `Certify`) VALUES
-('1', 'I/O Stream :: C++', '/contests/1', '{\"Hello, C++\": 1}', '{\"cpp\": \"C++\"}', 0),
+('1', 'I/O Stream :: C++', '/contests/1', '{\"Hello, C++\": 1}', '{\"cpp\": \"C++\", \"py\": \"Python\"}', 0),
 ('2', 'First Certificate :: C++', '/contests/2', '{\"Hello, C++\": 1}', '{\"cpp\": \"C++\"}', 1);
 
 -- --------------------------------------------------------

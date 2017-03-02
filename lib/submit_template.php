@@ -15,12 +15,15 @@
     <title>AT Judge</title>
 	<link href="/css/jumbotron.css" rel="stylesheet"><link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700"><link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons"><link rel="stylesheet" href="/css/bootstrap.min.css"><link rel="stylesheet" href="/css/bootstrap-material-design.min.css"><link rel="stylesheet" href="/css/ripples.min.css"><link rel="stylesheet" href="/css/snackbar.min.css"><link rel="stylesheet" href="/css/extension.css">
 	
-	<link rel="stylesheet" href="https://codemirror.net/lib/codemirror.css">
-	<link rel="stylesheet" href="https://codemirror.net/theme/lesser-dark.css">
-	<script src="https://codemirror.net/lib/codemirror.js"></script>
-	<script src="https://codemirror.net/mode/javascript/javascript.js"></script>
-	<script src="https://codemirror.net/addon/fold/foldcode.js"></script>
-	<script src="https://codemirror.net/mode/clike/clike.js"></script>
+	
+<link rel=stylesheet href="/codemirror/lib/codemirror.css">
+<link rel=stylesheet href="/codemirror/doc/docs.css">
+<link rel=stylesheet href="/codemirror/addon/hint/show-hint.css">
+<script src="/codemirror/lib/codemirror.js"></script>
+<script src="/codemirror/mode/clike/clike.js"></script>
+<script src="/codemirror/addon/edit/matchbrackets.js"></script>
+<script src="/codemirror/addon/hint/show-hint.js"></script>
+<script src="/codemirror/addon/hint/anyword-hint.js"></script>
 </head>
 
 <body>
