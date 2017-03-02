@@ -69,11 +69,11 @@ void eval (submit curr, size_t boxId)
 		compilelog = free_boxes [boxId].doCommand (langs [curr.lang](free_boxes [boxId].getPath ()));
 		cout << compilelog << "\n-----------------------------\n";
 		cout.flush ();
-		if (not fs::exists (free_boxes [boxId].getPath ("source.exe")))
-		{
-			skip = true;
-			log = "[\"" + compile_error + "\", 0]";
-		}
+		//if (not fs::exists (free_boxes [boxId].getPath ("source.exe")))
+		//{
+		//	skip = true;
+		//	log = "[\"" + compile_error + "\", 0]";
+		//}
 	}
 if (!skip)
 {
@@ -115,8 +115,7 @@ if (!skip)
 			}
 			string signal;
 			{
-				signal = free_boxes [boxId].doIsolatedCommand (string (" ./source.exe"), string (curr.task_row [9]), string (curr.task_row [10]), string ("in"), string ("outB"));
-				cout << signal << " == " << tl_error << "\n";
+				signal = free_boxes [boxId].doIsolatedCommand (langs_exec [curr.lang](free_boxes [boxId].getPath ()), string (curr.task_row [9]), string (curr.task_row [10]), string ("in"), free_boxes [boxId].getPath ("outB"));
 
 				{
 					stringstream ss;
