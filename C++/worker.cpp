@@ -225,12 +225,13 @@ int main ()
 			cout << "Free core + avaible task ...\n";
 			thread t1 (eval, submit (row [0], row [1], row [2], row [3], row [4], row [5]), getFree ());
 			t1.detach ();
-			system ("sleep 2s");
+			system ("sleep 0.5s");
 		}
 		if (to_print)
 		{
 			cout << "no submissions ...\n";
 			to_print = false;
+			system ("sleep 5s");
 		}
 
 		if(res != NULL)

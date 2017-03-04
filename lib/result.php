@@ -73,7 +73,15 @@
 		$tableheader = $tableheader . "<th>Total</th></tr>";
 		$table = $tableheader . $table;
 		$html_code = str_replace ('{{table}}', $table, $html_code); 
-		$html_code = str_replace ('{{cert}}', $table, $html_code); 
+		$cert = "";
+		if ($conn->query ("SELECT * FROM `Contests` WHERE `ID`=\"{$ID}\"")->fetch_assoc()["Certify"] == 1)
+		{
+			$user = (($conn->query("SELECT * FROM `Users` WHERE `Email`=\"{$_COOKIE["email"]}\""))->fetch_assoc())["ID"];
+			$cert = "<div class=\"alert alert-success\"> <strong>Well done!</strong> Your certificate is <a class=\"alert-link\" href=\"/verify/cert/{$user}/{$ID}\">here</a>.</div>";
+		}
+		else
+			$cert = "";
+		$html_code = str_replace ('{{cert}}', $cert, $html_code); 
 		echo $html_code;
 		unset($html_code);
 	}

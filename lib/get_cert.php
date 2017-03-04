@@ -39,6 +39,13 @@
 				}
 				return intval ($users["total"]);	
 		}
+		function get_max ()
+		{
+			$conn = new MySQL ("judge");
+			$value = explode('/', substr ($_SERVER["REQUEST_URI"], 13)); 
+			return $conn->query ("SELECT * FROM `Contests` WHERE `ID`=\"{$value[1]}\"")->fetch_assoc ()["MaxPoints"];
+		}
+
 		try
 		{
 			echo str_replace (
@@ -49,7 +56,7 @@
 						$conn->query ("SELECT * FROM `Contests` WHERE `ID`=\"{$value[1]}\"")->fetch_assoc ()["Name"],
 						str_replace (
 							'{{score}}',
-							get_score (),
+							get_score () . '/' . get_max (),
 							str_replace (
 								'{{id}}',
 								substr ($_SERVER["REQUEST_URI"], 13),

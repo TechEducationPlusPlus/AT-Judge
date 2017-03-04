@@ -50,6 +50,7 @@ CREATE TABLE `Contests` (
   `Link` text NOT NULL,
   `Tasks` text NOT NULL,
   `Langs` text NOT NULL,
+  `MaxPoints` text NOT NULL,
   `Certify` tinyint(2) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -57,10 +58,10 @@ CREATE TABLE `Contests` (
 -- Dumping data for table `Contests`
 --
 
-INSERT INTO `Contests` (`ID`, `Name`, `Link`, `Tasks`, `Langs`, `Certify`) VALUES
-('1', 'I/O Stream :: C++', '/contests/1', '{\"Hello, C++\": 1}', '{\"cpp\": \"C++\", \"py\": \"Python\"}', 0),
-('2', 'First Certificate :: C++', '/contests/2', '{\"Hello, C++\": 1}', '{\"cpp\": \"C++\"}', 1),
-('3', 'Winter tournament 2016', '/contests/3', '{\"Snowflake\": 2, \"Copying\": 3}', '{\"cpp\": \"C++\"}', 0);
+INSERT INTO `Contests` (`ID`, `Name`, `Link`, `Tasks`, `Langs`, `Certify`, `MaxPoints`) VALUES
+('1', 'I/O Stream :: C++', '/contests/1', '{\"Hello, C++\": 1}', '{\"cpp\": \"C++\", \"py\": \"Python\"}', 0, 100),
+('2', 'First Certificate :: C++', '/contests/2', '{\"Hello, C++\": 1}', '{\"cpp\": \"C++\"}', 1, 100),
+('3', 'Winter tournament 2016', '/contests/3', '{\"Snowflake\": 2, \"Copying\": 3}', '{\"cpp\": \"C++\"}', 0, 200);
 
 -- --------------------------------------------------------
 
