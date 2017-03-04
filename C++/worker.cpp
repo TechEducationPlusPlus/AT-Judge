@@ -24,12 +24,13 @@ namespace fs = std::experimental::filesystem;
 
 const int concurentThreadsSupported = thread::hardware_concurrency ();
 box* free_boxes;
+bool* is_free_box;
 
 int getFree ()
 {
 	for (int i = 0 ; i < concurentThreadsSupported ; i ++)
 	{
-		if (free_boxes [i].free ())
+		if (free_boxes [i].free () and is_free_box [i])
 		{
 			return i;
 		}
@@ -43,6 +44,7 @@ const string compile_error = "Compilation error";
 
 void eval (submit curr, size_t boxId)
 {
+	is_free_box [boxId] = false;
 	//cout << "KUCHE MRUSNO, BACHKAM" << endl;
 	try
 	{
@@ -164,6 +166,7 @@ if (!skip)
 		cout << "General: " << e.what () << "\n";
 	}
 	//cout << "#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=" << endl;
+	is_free_box [boxId] = !false;
 }
 
 #include "trim"
@@ -172,6 +175,9 @@ int main ()
 {
 	LINK_JUDGE = trim (LINK_JUDGE);
 	free_boxes = new box [concurentThreadsSupported];
+	is_free_box = new bool [concurentThreadsSupported];
+	for (int i = 0 ; i < concurentThreadsSupported ; i ++)
+		is_free_box [i] = true;
 	if (con == NULL) 
 	{
 		fprintf (stderr, "%s\n", mysql_error (con));
@@ -209,11 +215,17 @@ int main ()
 			to_print = true;
 			while (getFree () == -1)
 			{
-				cout << "waiting ...\n";
+				if (to_print)
+				{
+					cout << "waiting for core ...\n";
+					to_print = false;
+				}
 			}
+			to_print = true;
 			cout << "Free core + avaible task ...\n";
 			thread t1 (eval, submit (row [0], row [1], row [2], row [3], row [4], row [5]), getFree ());
-			t1.join ();
+			t1.detach ();
+			system ("sleep 2s");
 		}
 		if (to_print)
 		{

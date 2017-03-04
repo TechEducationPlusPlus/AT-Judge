@@ -73,7 +73,7 @@
 		$tableheader = $tableheader . "<th>Total</th></tr>";
 		$table = $tableheader . $table;
 		$html_code = str_replace ('{{table}}', $table, $html_code); 
-		$html_code = str_replace ('{{cert}}', "/verify/cert/0/3", $html_code); 
+		$html_code = str_replace ('{{cert}}', $table, $html_code); 
 		echo $html_code;
 		unset($html_code);
 	}
