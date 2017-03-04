@@ -1,1 +1,0 @@
-g++ -o diff_checker_cpp main.cpp -lfcgi++ -lfcgi -lcurl -lcurlpp -I.
