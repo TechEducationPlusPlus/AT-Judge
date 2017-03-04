@@ -5,6 +5,12 @@
 		print_queue ();
 		return false;
 	}
+	else if (preg_match("/\/verify\/cert\/.*\/.*/i", $_SERVER["REQUEST_URI"])) 
+	{
+		include (__DIR__ . "/lib/get_cert.php");
+		print_cert ();
+		return true;
+	}
 	else if (preg_match("/\/contests\/.*\/results/i", $_SERVER["REQUEST_URI"])) 
 	{
 		include (__DIR__ . "/lib/result.php");

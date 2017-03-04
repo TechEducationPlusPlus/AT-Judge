@@ -60,7 +60,7 @@ CREATE TABLE `Contests` (
 INSERT INTO `Contests` (`ID`, `Name`, `Link`, `Tasks`, `Langs`, `Certify`) VALUES
 ('1', 'I/O Stream :: C++', '/contests/1', '{\"Hello, C++\": 1}', '{\"cpp\": \"C++\", \"py\": \"Python\"}', 0),
 ('2', 'First Certificate :: C++', '/contests/2', '{\"Hello, C++\": 1}', '{\"cpp\": \"C++\"}', 1),
-('3', 'Winter tournament 2016', '/contests/bulgarian/winter/tournament/2017', '{\"Snowflake\": 2, \"Copying\": 3}', '{\"cpp\": \"C++\"}', 0);
+('3', 'Winter tournament 2016', '/contests/3', '{\"Snowflake\": 2, \"Copying\": 3}', '{\"cpp\": \"C++\"}', 0);
 
 -- --------------------------------------------------------
 
