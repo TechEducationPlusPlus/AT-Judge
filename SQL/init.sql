@@ -59,7 +59,8 @@ CREATE TABLE `Contests` (
 
 INSERT INTO `Contests` (`ID`, `Name`, `Link`, `Tasks`, `Langs`, `Certify`) VALUES
 ('1', 'I/O Stream :: C++', '/contests/1', '{\"Hello, C++\": 1}', '{\"cpp\": \"C++\", \"py\": \"Python\"}', 0),
-('2', 'First Certificate :: C++', '/contests/2', '{\"Hello, C++\": 1}', '{\"cpp\": \"C++\"}', 1);
+('2', 'First Certificate :: C++', '/contests/2', '{\"Hello, C++\": 1}', '{\"cpp\": \"C++\"}', 1),
+('3', 'Winter tournament 2016', '/contests/bulgarian/winter/tournament/2017', '{\"Snowflake\": 2, \"Copying\": 3}', '{\"cpp\": \"C++\"}', 0);
 
 -- --------------------------------------------------------
 
@@ -111,7 +112,9 @@ CREATE TABLE `Tasks` (
 --
 
 INSERT INTO `Tasks` (`ID`, `Name`, `DescriptionLink`, `TestsLink`, `Input`, `Output`, `Checker`, `StarNotation`, `MaxPoints`, `TL`, `ML`) VALUES
-('1', 'Hello, C++', 'https://github.com/TechEducationPlusPlus/Tasks/blob/master/C%2B%2B/IO%20Stream/Hello_C%2B%2B/README.md', 'https://raw.githubusercontent.com/TechEducationPlusPlus/Tasks/master/C%2B%2B/IO%20Stream/Hello_C%2B%2B/tests/', 'hello.*.in', 'hello.*.sol', 'diff', '01', '100', '0.1s', '256M');
+('1', 'Hello, C++', 'https://github.com/TechEducationPlusPlus/Tasks/blob/master/C%2B%2B/IO%20Stream/Hello_C%2B%2B/README.md', 'https://raw.githubusercontent.com/TechEducationPlusPlus/Tasks/master/C%2B%2B/IO%20Stream/Hello_C%2B%2B/tests/', 'hello.*.in', 'hello.*.sol', 'diff', '01', '100', '0.1s', '256M'),
+('2', 'Snowflack', 'https://github.com/TechEducationPlusPlus/Tasks/blob/master/C%2B%2B/WinterTournament/1-snowflake/author/snowflake-bg.pdf', 'https://raw.githubusercontent.com/TechEducationPlusPlus/Tasks/master/C%2B%2B/WinterTournament/1-snowflake/tests/', 'snowflake.*.in', 'snowflake.*.sol', 'diff', '01,02,03,04,05,06,07,08,09,10,11,12,13,14,15,16,17,18,19,20', '100', '1s', '256M'),
+('3', 'Copying', 'https://github.com/TechEducationPlusPlus/Tasks/blob/master/C%2B%2B/WinterTournament/3-copying/author/copying-bg.pdf', 'https://raw.githubusercontent.com/TechEducationPlusPlus/Tasks/master/C%2B%2B/WinterTournament/3-copying/tests/', 'copying.*.in', 'copying.*.sol', 'diff', '01,02,03,04,05,06,07,08,09,10,11,12,13,14,15,16,17,18,19,20', '100', '1s', '256M');
 
 -- --------------------------------------------------------
 

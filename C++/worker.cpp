@@ -115,14 +115,11 @@ if (!skip)
 			}
 			string signal;
 			{
-				signal = free_boxes [boxId].doIsolatedCommand (langs_exec [curr.lang](free_boxes [boxId].getPath ()), string (curr.task_row [9]), string (curr.task_row [10]), string ("in"), free_boxes [boxId].getPath ("outB"));
-
 				{
 					stringstream ss;
-					ss << "cp " 
-					   << free_boxes [boxId].getPath ("outB ")
+					ss << "/php_web/AT-Judge/C++/" 
 					   << boxId << "/outB";
-					system (ss.str ().c_str ());
+					signal = free_boxes [boxId].doIsolatedCommand (langs_exec [curr.lang](free_boxes [boxId].getPath ()), string (curr.task_row [9]), string (curr.task_row [10]), string ("in"), ss.str ());
 				}
 			}
 			{

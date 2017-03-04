@@ -5,8 +5,6 @@
 
 	$conn = new MySQL ($dbname);
 
-	$sql = "SELECT * FROM `Submissions`";
-	$result = $conn->query($sql);
 	$ID = $_REQUEST["id"];
 	$sql = 'SELECT * FROM `Tasks` WHERE `ID`=' . $ID;
 	$result = $conn->query ($sql);

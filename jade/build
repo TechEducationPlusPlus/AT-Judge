@@ -4,4 +4,5 @@ for i in `find . -name \*.jade` ;
 do
 	./node_modules/jade/bin/jade.js $i;
 	mv `echo ${i%.*}`.html ../`echo ${i%.*}`.php;
+	rm `echo ${i%.*}`.fot;
 done

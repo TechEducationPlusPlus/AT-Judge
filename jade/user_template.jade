@@ -1,29 +1,27 @@
 extends template
 
 block classes
-	- var homeclass = ".active";
+	- var homeclass = undefined;
 	- var contactclass = undefined;
 	- var aboutclass = undefined;
 
 block jumbotron
 	.jumbotron
 		.container
-			h1.display-3
-				img(src='/img/judge_logo.png')
-			p Best tasks for you! Here and now!
-			p
-				a.btn.btn-primary.btn-lg(href='/aboutus.php', role='button') Learn more »
+			center
+				img(src='/img/acdemy4_logo.png')
+				h1.display-3="We develop new learning methods"
 block container
 	.container
-		.row
+		.row(style="background-color: rgba(0,0,0,0);")
 			.col-xs-12.col-sm-12.col-md-6.col-lg-6.col-xs-offset-0.col-sm-offset-0.col-md-offset-3.col-lg-offset-3.toppad
 				.panel.panel-info
-					.panel-heading(style="background-color: #FF6A00; color: black;")
+					.panel-heading(style="background-color: #009688; color: white;")
 						h3.panel-title {{name}}
 					.panel-body
 						.row
 							.col-md-3.col-lg-3(align='center')
-								img.img-circle.img-responsive(alt='User Pic', src='{{pic}}')
+								img.img-circle.img-responsive(alt='User Pic', src='/img/no-picture.png')
 							.col-md-9.col-lg-9
 								table.table.table-user-information
 									tbody
@@ -32,8 +30,6 @@ block container
 											td
 												a(href='mailto:{{mail}}') {{mail}}
 					.panel-footer
-						a.btn.btn-sm.btn-primary(data-original-title='Broadcast Message', data-toggle='tooltip', type='button')
-							i.glyphicon.glyphicon-envelope
-						span.pull-right
-							a.btn.btn-sm.btn-warning(href='edit.html', data-original-title='Edit this user', data-toggle='tooltip', type='button')
-								i.glyphicon.glyphicon-edit
+						.row
+							span.pull-right
+								button.btn.btn-sm.btn-warning(data-original-title='Edit this user', data-toggle='tooltip', type='button')="Edit profile info"

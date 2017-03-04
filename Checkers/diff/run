@@ -1,1 +1,1 @@
-cgi-fcgi -start -connect :49153 ./diff_checker_cpp
+sudo php -S localhost:49152 -t $PWD index.php
