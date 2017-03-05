@@ -60,7 +60,7 @@
 							str_replace (
 								'{{id}}',
 								substr ($_SERVER["REQUEST_URI"], 13),
-								implode ('', file ($_SERVER["DOCUMENT_ROOT"] . '/lib/active/big_cert.html'))
+								implode ('', file ($_SERVER["DOCUMENT_ROOT"] . '/lib/active/big_cert.php'))
 							)
 						)
 					)
