@@ -1,5 +1,6 @@
 <html>
 	<head>
+		<link rel="icon" href="/favicon.png">
 		<script type="text/javascript" src="/lib/active/jquery.min.js"></script>
 		<script type="text/javascript" src="/lib/active/qrcode.min.js"></script>
 		<style>
@@ -20,7 +21,7 @@
 			background-color: white;
 			color: #009688;
 			width: 1280px; 
-			height: 960px;
+			height: 810px;
 			text-align: center; 
 			border: 10px solid #787878;
 		}
@@ -36,7 +37,7 @@
 		.date
 		{
 			position: absolute; 
-			top: 615px; 
+			top: 465px; 
 			left: 47px; 
 			text-align: left;
 			float: left;
@@ -76,7 +77,7 @@
 			height:300px; 
 			margin-top:15px;
 			left: 706px;
-			top: 596px;
+			top: 446px;
 			position: absolute;
 			float: right;
 		}
@@ -85,7 +86,7 @@
 		{
 			margin-top:15px;
 			left: 380px;
-			top: 600px;
+			top: 450px;
 			position: absolute;
 			float: right;
 		}
