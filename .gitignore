@@ -2,4 +2,5 @@ vendor/
 TO_DELETE/
 jade/*.fot
 C++/{0,1}
+C++/worker.exe
 node_modules/
