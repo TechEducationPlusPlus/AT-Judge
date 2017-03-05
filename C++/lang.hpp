@@ -5,14 +5,14 @@ map <string, function <string(string)> > langs = {
 		
 		[](string path)
 		{
-			return "/usr/bin/g++ " + path + "source.cpp -o " + path + "source.exe -Wall -Wextra -std=c++1z -O2 -lm -static";
+			return "timeout 30s /usr/bin/g++ " + path + "source.cpp -o " + path + "source.exe -Wall -Wextra -std=c++1z -O2 -lm -static";
 		}
 	},
 	{"c", 
 	
 		[](string path)
 		{
-			return "/usr/bin/gcc source.c -o source.exe -Wall -Wextra -std=c11 -O2 -lm -static";
+			return "timeout 30s /usr/bin/gcc source.c -o source.exe -Wall -Wextra -std=c11 -O2 -lm -static";
 		}
 	},
 	{"py", 
