@@ -7,13 +7,13 @@
 	}
 	else if (preg_match("/\/verify\/cert\/.*\/.*/i", $_SERVER["REQUEST_URI"])) 
 	{
-		include (__DIR__ . "/lib/get_cert.php");
+		include (__DIR__ . "/lib/get/cert.php");
 		print_cert ();
 		return true;
 	}
 	else if (preg_match("/\/contests\/.*\/results/i", $_SERVER["REQUEST_URI"])) 
 	{
-		include (__DIR__ . "/lib/result.php");
+		include (__DIR__ . "/lib/get/result.php");
 		print_results ();
 		return false;
 	}
@@ -21,12 +21,12 @@
 	{
 
 		$_REQUEST ["id"] = substr ($_SERVER["REQUEST_URI"], 8);
-		include (__DIR__ . "/lib/get_submission.php");
+		include (__DIR__ . "/lib/get/submission.php");
 		return false;
 	}
 	else if (substr ($_SERVER["REQUEST_URI"], 0, 10) == '/contests/')
 	{
-		include (__DIR__ . "/lib/contest.php");
+		include (__DIR__ . "/lib/get/contest.php");
 		print_contest ($_SERVER["REQUEST_URI"]);
 		//echo "Contest is not ready!";
 		return false;

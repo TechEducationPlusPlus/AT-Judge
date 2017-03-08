@@ -32,7 +32,7 @@
 			
 			$langs = $row["Langs"];
 			
-			$html_code = implode ('', file (__DIR__ . '/contest_template.php'));
+			$html_code = implode ('', file ($_SERVER["DOCUMENT_ROOT"] . '/lib/contest_template.php'));
 			if (isset ($_COOKIE["name"]))
 				$html_code = str_replace ('Hi', 'Hi, ' . $_COOKIE["name"], $html_code);
 			$html_code = str_replace ('{{email}}', $_COOKIE["email"], $html_code);
