@@ -15,20 +15,8 @@
     <title>AT Judge</title>
 	<link href="/css/jumbotron.css" rel="stylesheet"><link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700"><link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons"><link rel="stylesheet" href="/css/bootstrap.min.css"><link rel="stylesheet" href="/css/bootstrap-material-design.min.css"><link rel="stylesheet" href="/css/ripples.min.css"><link rel="stylesheet" href="/css/snackbar.min.css"><link rel="stylesheet" href="/css/extension.css">
 	
-<link rel=stylesheet href="/codemirror/lib/codemirror.css">
-<link rel=stylesheet href="/codemirror/doc/docs.css">
-<link rel=stylesheet href="/codemirror/addon/hint/show-hint.css">
-<script src="/codemirror/lib/codemirror.js"></script>
-<script src="/codemirror/mode/clike/clike.js"></script>
-<script src="/codemirror/addon/edit/matchbrackets.js"></script>
-<script src="/codemirror/addon/hint/show-hint.js"></script>
-<script src="/codemirror/addon/hint/anyword-hint.js"></script>
-
-	<style>
-		#tasks>nav>ul>li:nth-child(2n+1) {
-			background-color: #1AA194;
-		}
-	</style>
+	<link rel="stylesheet" href="/d9757859af.css">
+	<link rel="stylesheet" href="/css/quiz.css">
 </head>
 
 <body>
@@ -56,19 +44,17 @@
         <div class="row">
             <div class="col-md-12" style="padding-right: 45px !important; padding-left: 45px !important;">
                 <form enctype="multipart/form-data" action="/submission_quiz.php" method="POST" onsubmit="return validateForm()">
-                    <div class="form-group">
+                    <div class="col-md-12">
                         <label for="email">Email address</label>
                         <input type="email" minlength=1 required name="email" value="{{email}}" readonly="" class="form-control"><small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small></div>
                     </div>
-					{{tasks}}
-                    <input type="hidden" name="contest" value="{{contestid}}">
+                    <div class="col-md-12">
+						{{tasks}}
+                    </div>
+                    <input type="hidden" name="contest" value="{{quizid}}">
                     <button type="submit" class="btn btn-raised btn-success">Submit</button>
                 </form>
-				<div id="test" style="display:none;"> </div>
             </div>
-            <div class="col-md-12" style="padding-right: 45px !important; padding-left: 45px !important;">
-				{{submits}}
-			</div>
         </div>
     </div>
     <hr>
@@ -86,45 +72,6 @@
 				return false;
 			}
 		}
-		var editor;
-		var modes = {
-			js: "javascript",
-			java: "text/x-java",
-			c: "text/x-csrc",
-			cpp: "text/x-c++src",
-			cs: "text/x-csharp",
-			php: "application/x-httpsd-php",
-			py: "text/x-python",
-			cy: "text/x-cython",
-			hs: "text/x-haskell",
-			ts: "application/typescript"
-		};
-		var names = {{langs}};
-		function change ()
-		{
-			var e = document.getElementById("lang");
-			var value = e.options[e.selectedIndex].value;
-			var text = e.options[e.selectedIndex].text;
-			document.getElementById ("test").innerHTML += "change (): value = " + value + ", text = " + text + ", mode [value]: " + modes [value] + "<br>";
-			editor.setOption("mode", modes [value]);
-			CodeMirror.autoLoadMode(editor, modes[value]);
-		}
-
-		window.onload = function() {
-			for (var mode in names)
-			{
-				document.getElementById ("test").innerHTML += mode + " -> " + modes [mode] + "<br>";
-				document.getElementById ("lang").innerHTML += "<option value='" + mode + "'>" + names [mode] + "</option>";
-			}
-			CodeMirror.modeURL = "/codemirror/mode/%N/%N.js";
-			editor = CodeMirror.fromTextArea(document.getElementById("sourcecode"), {
-				mode: "text/x-c++src",
-				extraKeys: {"Ctrl-Space": "autocomplete"},
-				theme: "default",
-				lineNumbers: true,
-				lineWrapping: true
-			});
-		};
 	</script>
 </body>
 

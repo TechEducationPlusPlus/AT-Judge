@@ -1,5 +1,5 @@
 <?php
-	function print_contest (string $link)
+	function print_quiz (string $link)
 	{
 		include_once ($_SERVER["DOCUMENT_ROOT"] . "/lib/mysql.php");
 		include_once ($_SERVER["DOCUMENT_ROOT"] . "/lib/contest_submits.php");
@@ -17,12 +17,40 @@
 
 		function get_html ($id, $mysql)
 		{
-			return `
-				<div class="form-group">
+			$task = $mysql->query ("SELECT * FROM `QuizTasks` WHERE `ID`=\"{$id}\"")->fetch_assoc ();
+			$json = json_decode($task["Options"], true);
+			$answer = "";
+			foreach ($json as $key => $value)
+			{
+				$answer = $answer . "
+										<label class=\"element-animation1 btn btn-lg btn-primary btn-block\">
+											<span class=\"btn-label\">
+												<i class=\"fa fa-caret-right\" aria-hidden=\"true\"></i>
+											</span>
+											<input type=\"radio\" name=\"$id\" value=\"{$key}\">{$value}</input>
+										</label>
+";
+			}
+			$output = "
+				<div class=\"form-group\">
+					<div class=\"container-fluid\">
+						<div class=\"modal-dialog\">
+							<div class=\"modal-content\">
+								<div class=\"modal-header\">
+									<h3><span class=\"label label-warning\" id=\"qid\">{$id}</span> {$task ["Question"]}</h3>
+								</div>
+								<div class=\"modal-body\">
+									<div class=\"quiz\" id=\"quiz\" data-toggle=\"buttons\">
+										{$answer}
+									</div>
+								</div>
+								<div class=\"modal-footer text-muted\"> <span id=\"hint\">{$task ["Hint"]}</span> </div>
+							</div>
+						</div>
+					</div>
 				</div>
-			`;
-
-	//<div class="container-fluid"> <div class="modal-dialog"> <div class="modal-content"> <div class="modal-header"> <h3><span class="label label-warning" id="qid">{{questionID}}</span> {{question}}</h3> </div> <div class="modal-body"> <div class="quiz" id="quiz" data-toggle="buttons"> <label class="element-animation1 btn btn-lg btn-primary btn-block"><span class="btn-label"><i class="fa fa-caret-right" aria-hidden="true"></i></span> <input type="radio" name="{{questionID}}" value="1">{{answer1}}</label> <label class="element-animation1 btn btn-lg btn-primary btn-block"><span class="btn-label"><i class="fa fa-caret-right" aria-hidden="true"></i></span> <input type="radio" name="{{questionID}}" value="2">{{answer2}}</label> <label class="element-animation1 btn btn-lg btn-primary btn-block"><span class="btn-label"><i class="fa fa-caret-right" aria-hidden="true"></i></span> <input type="radio" name="{{questionID}}" value="3">{{answer3}}</label> <label class="element-animation1 btn btn-lg btn-primary btn-block"><span class="btn-label"><i class="fa fa-caret-right" aria-hidden="true"></i></span> <input type="radio" name="{{questionID}}" value="4">{{answer4}}</label> </div> </div> <div class="modal-footer text-muted"> <span id="hint">{{hint}}</span> </div> </div> </div> </div>
+";
+			return $output;
 		}
 
 		if ($result->num_rows == 1) 

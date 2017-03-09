@@ -1,6 +1,10 @@
 USE	`judge`;
 DROP TABLE `Checker`;
+DROP TABLE `Certificates`;
 DROP TABLE `Contests`;
 DROP TABLE `Submissions`;
 DROP TABLE `Tasks`;
 DROP TABLE `Users`;
+DROP TABLE `Quizes`;
+DROP TABLE `QuizResults`;
+DROP TABLE `QuizTasks`;

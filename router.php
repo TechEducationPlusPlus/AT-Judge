@@ -11,6 +11,18 @@
 		print_cert ();
 		return true;
 	}
+	else if (preg_match("/\/quiz\/.*\/results/i", $_SERVER["REQUEST_URI"])) 
+	{
+		include (__DIR__ . "/lib/quiz/result.php");
+		print_quiz_results ($_SERVER["REQUEST_URI"]);
+		return false;
+	}
+	else if (preg_match("/\/quiz\/.*/i", $_SERVER["REQUEST_URI"])) 
+	{
+		include (__DIR__ . "/lib/get/quiz.php");
+		print_quiz ($_SERVER["REQUEST_URI"]);
+		return false;
+	}
 	else if (preg_match("/\/contests\/.*\/results/i", $_SERVER["REQUEST_URI"])) 
 	{
 		include (__DIR__ . "/lib/get/result.php");

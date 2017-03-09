@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Feb 21, 2017 at 08:32 AM
+-- Generation Time: Mar 09, 2017 at 08:08 PM
 -- Server version: 10.1.21-MariaDB
 -- PHP Version: 7.1.2
 
@@ -19,6 +19,27 @@ SET time_zone = "+00:00";
 --
 -- Database: `judge`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `Certificates`
+--
+
+CREATE TABLE `Certificates` (
+  `ID` varchar(32) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `Name` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `Course` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `Score` int(11) NOT NULL,
+  `Date` text COLLATE utf8mb4_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `Certificates`
+--
+
+INSERT INTO `Certificates` (`ID`, `Name`, `Course`, `Score`, `Date`) VALUES
+('1', 'TTS', 'C++', 1000, '12.01.2018');
 
 -- --------------------------------------------------------
 
@@ -58,10 +79,71 @@ CREATE TABLE `Contests` (
 -- Dumping data for table `Contests`
 --
 
-INSERT INTO `Contests` (`ID`, `Name`, `Link`, `Tasks`, `Langs`, `Certify`, `MaxPoints`) VALUES
-('1', 'I/O Stream :: C++', '/contests/1', '{\"Hello, C++\": 1}', '{\"cpp\": \"C++\", \"py\": \"Python\"}', 0, 100),
-('2', 'First Certificate :: C++', '/contests/2', '{\"Hello, C++\": 1}', '{\"cpp\": \"C++\"}', 1, 100),
-('3', 'Winter tournament 2016', '/contests/3', '{\"Snowflake\": 2, \"Copying\": 3}', '{\"cpp\": \"C++\"}', 0, 200);
+INSERT INTO `Contests` (`ID`, `Name`, `Link`, `Tasks`, `Langs`, `MaxPoints`, `Certify`) VALUES
+('1', 'I/O Stream :: C++', '/contests/1', '{\"Hello, C++\": 1}', '{\"cpp\": \"C++\", \"py\": \"Python\"}', '100', 0),
+('2', 'First Certificate :: C++', '/contests/2', '{\"Hello, C++\": 1}', '{\"cpp\": \"C++\"}', '100', 1),
+('3', 'Winter tournament 2016', '/contests/3', '{\"Snowflake\": 2, \"Copying\": 3}', '{\"cpp\": \"C++\"}', '200', 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `Quizes`
+--
+
+CREATE TABLE `Quizes` (
+  `ID` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `Link` varchar(150) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `Tasks` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `Name` text COLLATE utf8mb4_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `Quizes`
+--
+
+INSERT INTO `Quizes` (`ID`, `Link`, `Tasks`, `Name`) VALUES
+('1', '/quiz/1', '1', 'Quiz for TechEdu++');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `QuizResults`
+--
+
+CREATE TABLE `QuizResults` (
+  `UserID` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `QuizID` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `Result` text COLLATE utf8mb4_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `QuizResults`
+--
+
+INSERT INTO `QuizResults` (`UserID`, `QuizID`, `Result`) VALUES
+('alex@techedu.cf', '1', '1');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `QuizTasks`
+--
+
+CREATE TABLE `QuizTasks` (
+  `ID` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `Question` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `Options` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `Answer` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `Hint` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `Points` text COLLATE utf8mb4_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `QuizTasks`
+--
+
+INSERT INTO `QuizTasks` (`ID`, `Question`, `Options`, `Answer`, `Hint`, `Points`) VALUES
+('1', 'What\'s TechEdu++ founder\'s name?', '{\"1\":\"Alex\",\"2\":\"Dimo\",\"3\":\"Marin\"}', '1', '', '1');
 
 -- --------------------------------------------------------
 
@@ -85,8 +167,9 @@ CREATE TABLE `Submissions` (
 -- Dumping data for table `Submissions`
 --
 
---INSERT INTO `Submissions` (`ID`, `ContestID`, `TaskID`, `UserID`, `Code`, `Lang`, `Points`, `Log`, `CompileLog`) VALUES
---('0', '1', '1', 'alex@tsalex.tk', '%23include+%3Ciostream%3E%0D%0A%0D%0Aint+main+%28%29%0D%0A%7B%0D%0A++std%3A%3Acout+%3C%3C+%22Hello%2C+C%2B%2B%22+%3C%3C+%22%5Cn%22%3B%0D%0A%7D', 'cpp', 100, '[[\"OK\",1]]', '');
+INSERT INTO `Submissions` (`ID`, `ContestID`, `TaskID`, `UserID`, `Code`, `Lang`, `Points`, `Log`, `CompileLog`) VALUES
+('0', '2', '1', 'alex@techedu.cf', '%23include+%3Ciostream%3E%0D%0A%0D%0Aint+main+%28%29%0D%0A%09std%3A%3Acout+%3C%3C+%22Hello%2C+C%2B%2B%5Cn%22%3B', 'cpp', 0, '[[\"WA\", 0]]', '%2Fvar%2Flocal%2Flib%2Fisolate%2F0%2Fbox%2Fsource.cpp%3A4%3A2%3A%20error%3A%20expected%20initializer%20before%20%E2%80%98std%E2%80%99%0A%20%20std%3A%3Acout%20%3C%3C%20%22Hello%2C%20C%2B%2B%5Cn%22%3B%0A%20%20%5E~~%0A'),
+('1', '2', '1', 'alex@techedu.cf', '%23include+%3Ciostream%3E%0D%0A%0D%0Aint+main+%28%29+%7B%0D%0A%09std%3A%3Acout+%3C%3C+%22Hello%2C+C%2B%2B%5Cn%22%3B%0D%0A%7D', 'cpp', 100, '[[\"OK\", 1]]', '');
 
 -- --------------------------------------------------------
 
@@ -136,11 +219,25 @@ CREATE TABLE `Users` (
 -- Dumping data for table `Users`
 --
 
---INSERT INTO `Users` (`ID`, `Username`, `Password`, `Email`, `Name`, `Admin`)
---VALUES
---('0', 'alex_ts', 'a204d95d18da65e6150c2b549aadc3e5', 'alex@tsalex.tk', 'Alex Tsvetanov', 0);
+INSERT INTO `Users` (`ID`, `Username`, `Password`, `Email`, `Name`, `Admin`) VALUES
+('0', 'alex_ts', 'a204d95d18da65e6150c2b549aadc3e5', 'alex@techedu.cf', 'Alex Tsvetanov', 0);
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `Certificates`
+--
+ALTER TABLE `Certificates`
+  ADD UNIQUE KEY `ID` (`ID`);
+
+--
+-- Indexes for table `Quizes`
+--
+ALTER TABLE `Quizes`
+  ADD UNIQUE KEY `Link` (`Link`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-
