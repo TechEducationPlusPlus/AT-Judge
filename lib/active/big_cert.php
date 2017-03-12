@@ -1,5 +1,6 @@
 <html>
 	<head>
+		<title>Certificate</title>
 		<link rel="icon" href="/favicon.png">
 		<script type="text/javascript" src="/lib/active/jquery.min.js"></script>
 		<script type="text/javascript" src="/lib/active/qrcode.min.js"></script>

@@ -12,7 +12,7 @@
     <meta name="robots" content="index, nofollow">
     <meta https-equiv="Content-Type" content="text/html; charset=UTF-8">
     <link rel="icon" href="/favicon.png">
-    <title>AT Judge</title>
+    <title>Judge :: TechEdu ++</title>
 	<link href="/css/jumbotron.css" rel="stylesheet"><link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700"><link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons"><link rel="stylesheet" href="/css/bootstrap.min.css"><link rel="stylesheet" href="/css/bootstrap-material-design.min.css"><link rel="stylesheet" href="/css/ripples.min.css"><link rel="stylesheet" href="/css/snackbar.min.css"><link rel="stylesheet" href="/css/extension.css">
 	
 	<link rel="stylesheet" href="/d9757859af.css">
@@ -20,7 +20,7 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-fixed-top navbar-default"><a href="/" class="navbar-brand">AT Judge</a>
+    <nav class="navbar navbar-fixed-top navbar-default"><a href="#" class="navbar-brand">TechEdu ++</a>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-left">
                 <li class="nav-item active"><a href="/" class="nav-link">Home</a></li>
