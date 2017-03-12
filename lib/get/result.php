@@ -74,7 +74,7 @@
 		$table = $tableheader . $table;
 		$html_code = str_replace ('{{table}}', $table, $html_code); 
 		$cert = "";
-		if ($conn->query ("SELECT * FROM `Contests` WHERE `ID`=\"{$ID}\"")->fetch_assoc()["Certify"] == 1)
+		if ($conn->query ("SELECT * FROM `Contests` WHERE `ID`=\"{$ID}\"")->fetch_assoc()["Certify"] == 1 and $conn->query ("SELECT * FROM `Users` WHERE `Email`=\"{$_COOKIE["email"]}\"")->num_rows == 1)
 		{
 			$user = (($conn->query("SELECT * FROM `Users` WHERE `Email`=\"{$_COOKIE["email"]}\""))->fetch_assoc())["ID"];
 			$cert = "<div class=\"alert alert-success\"> <strong>Well done!</strong> Your certificate is <a class=\"alert-link\" href=\"/verify/cert/{$user}/{$ID}\">here</a>.</div>";
