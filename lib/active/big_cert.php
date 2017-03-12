@@ -140,32 +140,32 @@
 		<div id="share-buttons">
 			
 			<!-- Buffer -->
-			<a href="https://bufferapp.com/add?url=https://infocourse.techedu.cf/verify/cert/{{UserID}}/{{ContestID}}&amp;text=Simple Share Buttons" target="_blank">
+			<a href="https://bufferapp.com/add?url=https://atj.openjudge.tk/verify/cert/{{UserID}}/{{ContestID}}&amp;text=Simple Share Buttons" target="_blank">
 				<img src="https://simplesharebuttons.com/images/somacro/buffer.png" alt="Buffer" />
 			</a>
 			
 			<!-- Digg -->
-			<a href="http://www.digg.com/submit?url=https://infocourse.techedu.cf/verify/cert/{{UserID}}/{{ContestID}}" target="_blank">
+			<a href="http://www.digg.com/submit?url=https://atj.openjudge.tk/verify/cert/{{UserID}}/{{ContestID}}" target="_blank">
 				<img src="https://simplesharebuttons.com/images/somacro/diggit.png" alt="Digg" />
 			</a>
 			
 			<!-- Email -->
-			<a href="mailto:?Subject=Simple Share Buttons&amp;Body=I%20saw%20this%20and%20thought%20of%20you!%20 https://infocourse.techedu.cf/verify/cert/{{UserID}}/{{ContestID}}">
+			<a href="mailto:?Subject=Simple Share Buttons&amp;Body=I%20saw%20this%20and%20thought%20of%20you!%20 https://atj.openjudge.tk/verify/cert/{{UserID}}/{{ContestID}}">
 				<img src="https://simplesharebuttons.com/images/somacro/email.png" alt="Email" />
 			</a>
 		 
 			<!-- Facebook -->
-			<a href="http://www.facebook.com/sharer.php?u=https://infocourse.techedu.cf/verify/cert/{{UserID}}/{{ContestID}}" target="_blank">
+			<a href="http://www.facebook.com/sharer.php?u=https://atj.openjudge.tk/verify/cert/{{UserID}}/{{ContestID}}" target="_blank">
 				<img src="https://simplesharebuttons.com/images/somacro/facebook.png" alt="Facebook" />
 			</a>
 			
 			<!-- Google+ -->
-			<a href="https://plus.google.com/share?url=https://infocourse.techedu.cf/verify/cert/{{UserID}}/{{ContestID}}" target="_blank">
+			<a href="https://plus.google.com/share?url=https://atj.openjudge.tk/verify/cert/{{UserID}}/{{ContestID}}" target="_blank">
 				<img src="https://simplesharebuttons.com/images/somacro/google.png" alt="Google" />
 			</a>
 			
 			<!-- LinkedIn -->
-			<a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://infocourse.techedu.cf/verify/cert/{{UserID}}/{{ContestID}}" target="_blank">
+			<a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://atj.openjudge.tk/verify/cert/{{UserID}}/{{ContestID}}" target="_blank">
 				<img src="https://simplesharebuttons.com/images/somacro/linkedin.png" alt="LinkedIn" />
 			</a>
 			
@@ -180,32 +180,32 @@
 			</a>
 			
 			<!-- Reddit -->
-			<a href="http://reddit.com/submit?url=https://infocourse.techedu.cf/verify/cert/{{UserID}}/{{ContestID}}&amp;title=Simple Share Buttons" target="_blank">
+			<a href="http://reddit.com/submit?url=https://atj.openjudge.tk/verify/cert/{{UserID}}/{{ContestID}}&amp;title=Simple Share Buttons" target="_blank">
 				<img src="https://simplesharebuttons.com/images/somacro/reddit.png" alt="Reddit" />
 			</a>
 			
 			<!-- StumbleUpon-->
-			<a href="http://www.stumbleupon.com/submit?url=https://infocourse.techedu.cf/verify/cert/{{UserID}}/{{ContestID}}&amp;title=Simple Share Buttons" target="_blank">
+			<a href="http://www.stumbleupon.com/submit?url=https://atj.openjudge.tk/verify/cert/{{UserID}}/{{ContestID}}&amp;title=Simple Share Buttons" target="_blank">
 				<img src="https://simplesharebuttons.com/images/somacro/stumbleupon.png" alt="StumbleUpon" />
 			</a>
 			
 			<!-- Tumblr-->
-			<a href="http://www.tumblr.com/share/link?url=https://infocourse.techedu.cf/verify/cert/{{UserID}}/{{ContestID}}&amp;title=Simple Share Buttons" target="_blank">
+			<a href="http://www.tumblr.com/share/link?url=https://atj.openjudge.tk/verify/cert/{{UserID}}/{{ContestID}}&amp;title=Simple Share Buttons" target="_blank">
 				<img src="https://simplesharebuttons.com/images/somacro/tumblr.png" alt="Tumblr" />
 			</a>
 			 
 			<!-- Twitter -->
-			<a href="https://twitter.com/share?url=https://infocourse.techedu.cf/verify/cert/{{UserID}}/{{ContestID}}&amp;text=Simple%20Share%20Buttons&amp;hashtags=simplesharebuttons" target="_blank">
+			<a href="https://twitter.com/share?url=https://atj.openjudge.tk/verify/cert/{{UserID}}/{{ContestID}}&amp;text=Simple%20Share%20Buttons&amp;hashtags=simplesharebuttons" target="_blank">
 				<img src="https://simplesharebuttons.com/images/somacro/twitter.png" alt="Twitter" />
 			</a>
 			
 			<!-- VK -->
-			<a href="http://vkontakte.ru/share.php?url=https://infocourse.techedu.cf/verify/cert/{{UserID}}/{{ContestID}}" target="_blank">
+			<a href="http://vkontakte.ru/share.php?url=https://atj.openjudge.tk/verify/cert/{{UserID}}/{{ContestID}}" target="_blank">
 				<img src="https://simplesharebuttons.com/images/somacro/vk.png" alt="VK" />
 			</a>
 			
 			<!-- Yummly -->
-			<a href="http://www.yummly.com/urb/verify?url=https://infocourse.techedu.cf/verify/cert/{{UserID}}/{{ContestID}}&amp;title=Simple Share Buttons" target="_blank">
+			<a href="http://www.yummly.com/urb/verify?url=https://atj.openjudge.tk/verify/cert/{{UserID}}/{{ContestID}}&amp;title=Simple Share Buttons" target="_blank">
 				<img src="https://simplesharebuttons.com/images/somacro/yummly.png" alt="Yummly" />
 			</a>
 
@@ -216,7 +216,7 @@
 				height : 150
 			});
 
-			qrcode.makeCode ("https://infocourse.techedu.cf/verify/cert/{{UserID}}/{{ConstestID}}");
+			qrcode.makeCode ("https://atj.openjudge.tk/verify/cert/{{UserID}}/{{ConstestID}}");
 		</script>
 		<script src="/lib/active/bower_components/dom-to-image/dist/dom-to-image.min.js"> </script>
 		<script type="text/javascript"> 
