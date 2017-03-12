@@ -48,19 +48,28 @@
 
 		try
 		{
-			echo str_replace (
-					'{{name}}',
-					$conn->query ("SELECT * FROM `Users` WHERE `ID`=\"{$value[0]}\"")->fetch_assoc ()["Name"],
-					str_replace (
-						'{{contest}}',
-						$conn->query ("SELECT * FROM `Contests` WHERE `ID`=\"{$value[1]}\"")->fetch_assoc ()["Name"],
+			echo 
+				 str_replace (
+					'{{UserID}}',
+					$value[0],
+					 str_replace (
+						'{{ContestID}}',
+						$value[1],
 						str_replace (
-							'{{score}}',
-							get_score () . '/' . get_max (),
+							'{{name}}',
+							$conn->query ("SELECT * FROM `Users` WHERE `ID`=\"{$value[0]}\"")->fetch_assoc ()["Name"],
 							str_replace (
-								'{{id}}',
-								substr ($_SERVER["REQUEST_URI"], 13),
-								implode ('', file ($_SERVER["DOCUMENT_ROOT"] . '/lib/active/big_cert.php'))
+								'{{contest}}',
+								$conn->query ("SELECT * FROM `Contests` WHERE `ID`=\"{$value[1]}\"")->fetch_assoc ()["Name"],
+								str_replace (
+									'{{score}}',
+									get_score () . '/' . get_max (),
+									str_replace (
+										'{{id}}',
+										substr ($_SERVER["REQUEST_URI"], 13),
+										implode ('', file ($_SERVER["DOCUMENT_ROOT"] . '/lib/active/big_cert.php'))
+									)
+								)
 							)
 						)
 					)
