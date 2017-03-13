@@ -27,6 +27,7 @@ footer {
 }
 .btn.btn-success, .btn.btn-success:hover, .btn.btn-success:focus  {
 	background-color: #009688 !important;
+	margin-right: 10px;
 }
 
 body {
