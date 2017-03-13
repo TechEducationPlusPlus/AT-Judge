@@ -1,0 +1,28 @@
+extends ../template
+
+block classes
+	- var homeclass = undefined;
+	- var contactclass = undefined;
+	- var aboutclass = undefined;
+
+block jumbotron
+	.jumbotron
+		.container
+			h1.display-3="Search"
+block container
+	.container
+		.panel.panel-primary
+			.panel-heading
+				h4 Contests
+			.panel-body
+				{{contests}}
+		.panel.panel-primary
+			.panel-heading
+				h4 Users
+			.panel-body
+				{{users}}
+		.panel.panel-primary
+			.panel-heading
+				h4 Quizes
+			.panel-body
+				{{quizes}}
