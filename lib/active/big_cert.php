@@ -28,7 +28,7 @@
 			width: 1280px; 
 			height: 810px;
 			text-align: center; 
-			border: 10px solid #787878;
+			border: 10px solid #007254;
 		}
 		#cert
 		{
@@ -137,6 +137,7 @@
 		</div>
 		</div> 
 		<div id="image"></div>
+<br><br><br>
 		<div id="share-buttons">
 			
 			<!-- Buffer -->

@@ -61,6 +61,7 @@
 			if ($result->num_rows > 0) 
 			{
 				$tasks = array ();
+				$max_points = 0;
 				while ($row = $result->fetch_assoc())
 				{
 					if (!isset ($users [$row["UserID"]]))
@@ -76,6 +77,8 @@
 					$users [$row["UserID"]][$row["TaskID"]] = update ($users [$row["UserID"]][$row["TaskID"]], $row["Points"]);
 
 					$users [$row["UserID"]]["total"] = $users [$row["UserID"]]["total"] + $users [$row["UserID"]][$row["TaskID"]];
+					
+					$max_points = update ($max_points, $users [$row["UserID"]]["total"]);
 				
 					$nameTask = $conn -> query ("SELECT * FROM `Tasks` WHERE `ID`=" . $row ["TaskID"])->fetch_assoc () ["Name"];
 					$tasks [$row["TaskID"]] = $nameTask;
@@ -114,7 +117,10 @@
 			if ($conn->query ("SELECT * FROM `Contests` WHERE `ID`=\"{$ID}\"")->fetch_assoc()["Certify"] == 1 and $conn->query ("SELECT * FROM `Users` WHERE `Email`=\"{$_COOKIE["email"]}\"")->num_rows == 1)
 			{
 				$user = (($conn->query("SELECT * FROM `Users` WHERE `Email`=\"{$_COOKIE["email"]}\""))->fetch_assoc())["ID"];
-				$cert = "<div class=\"alert alert-success\"> <strong>Well done!</strong> Your certificate is <a class=\"alert-link\" href=\"/verify/cert/{$user}/{$ID}\">here</a>.</div>";
+				if ($users[$_COOKIE["email"]]["total"] >= 8 * $max_points / 10) 
+				{
+					$cert = "<div class=\"alert alert-success\"> <strong>Well done!</strong> Your certificate is <a class=\"alert-link\" href=\"/verify/cert/{$user}/{$ID}\">here</a>.</div>";
+				}
 			}
 			else
 				$cert = "";
