@@ -51,8 +51,10 @@
                     <div class="col-md-12">
 						{{tasks}}
                     </div>
-                    <input type="hidden" name="contest" value="{{quizid}}">
-                    <button type="submit" class="btn btn-raised btn-success">Submit</button>
+                    <div class="col-md-12">
+						<input type="hidden" name="contest" value="{{quizid}}">
+						<button type="submit" class="btn btn-raised btn-success">Submit</button>
+                    </div>
                 </form>
             </div>
         </div>
