@@ -26,26 +26,35 @@ html(lang='en')
 	body(cz-shortcut-listen="true")
 		block classes
 		nav.navbar.navbar-static-top.navbar-default
-			a.navbar-brand(href='#') TechEdu ++
-			.navbar-collapse.collapse.navbar-responsive-collapse
-				ul.nav.navbar-nav
-					li.nav-item(class=typeof homeclass === "undefined" ? "" : "active")
-						a.nav-link(href=typeof homeclass === "undefined" ? '/' : "#") Home
-					li.nav-item(class=typeof contactclass === "undefined" ? "" : "active")
-						a.nav-link(href=typeof contactclass === "undefined" ? '/contactus.php' : "#") Contact
-					li.nav-item(class=typeof aboutclass === "undefined" ? "" : "active")
-						a.nav-link(href=typeof aboutclass === "undefined" ? '/aboutus.php' : "#") About
-				form.navbar-form.navbar-left(role="search", action="/search.php")
-					.form-group.is-empty
-						input.form-control.col-md-8(placeholder='Search', name="pattern", type='text')
-				ul.nav.navbar-nav.navbar-right
-					li.nav-item(id="login", class=typeof loginclass === "undefined" ? "" : "active")
-					li.nav-item(class=typeof registerclass === "undefined" ? "" : "active")
-						a.nav-link(href='/register.php') Register
-					li.nav-item(class=typeof homeclass === "undefined" ? "" : "active", style="border-right: rgba(0,0,0,0) solid 20px;")
-						a.nav-link(href='/user.php') 
-							|Hi
-							|<?php if (isset($_COOKIE ["name"])) { echo ", "; echo $_COOKIE ["name"]; } ?>
+			.container-fluid
+				.nav-header
+					button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-responsive-collapse')
+						span.icon-bar
+						span.icon-bar
+						span.icon-bar
+						span.icon-bar
+						span.icon-bar
+						span.icon-bar
+					a.navbar-brand(href='#') TechEdu ++
+				.navbar-collapse.collapse.navbar-responsive-collapse
+					ul.nav.navbar-nav
+						li.nav-item(class=typeof homeclass === "undefined" ? "" : "active")
+							a.nav-link(href=typeof homeclass === "undefined" ? '/' : "#") Home
+						li.nav-item(class=typeof contactclass === "undefined" ? "" : "active")
+							a.nav-link(href=typeof contactclass === "undefined" ? '/contactus.php' : "#") Contact
+						li.nav-item(class=typeof aboutclass === "undefined" ? "" : "active")
+							a.nav-link(href=typeof aboutclass === "undefined" ? '/aboutus.php' : "#") About
+					form.navbar-form.navbar-left(role="search", action="/search.php")
+						.form-group.is-empty
+							input.form-control.col-md-8(placeholder='Search', name="pattern", type='text')
+					ul.nav.navbar-nav.navbar-right
+						li.nav-item(id="login", class=typeof loginclass === "undefined" ? "" : "active")
+						li.nav-item(class=typeof registerclass === "undefined" ? "" : "active")
+							a.nav-link(href='/register.php') Register
+						li.nav-item(class=typeof homeclass === "undefined" ? "" : "active", style="border-right: rgba(0,0,0,0) solid 20px;")
+							a.nav-link(href='/user.php') 
+								|Hi
+								|<?php if (isset($_COOKIE ["name"])) { echo ", "; echo $_COOKIE ["name"]; } ?>
 		block jumbotron
 			
 		block container
