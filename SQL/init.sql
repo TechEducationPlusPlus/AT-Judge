@@ -82,7 +82,7 @@ CREATE TABLE `Contests` (
 INSERT INTO `Contests` (`ID`, `Name`, `Link`, `Tasks`, `Langs`, `MaxPoints`, `Certify`) VALUES
 ('1', 'I/O Stream :: C++', '/contests/1', '{\"Hello, C++\": 1}', '{\"cpp\": \"C++\", \"py\": \"Python\"}', '100', 0),
 ('2', 'First Certificate :: C++', '/contests/2', '{\"Hello, C++\": 1}', '{\"cpp\": \"C++\"}', '100', 1),
-('3', 'Winter tournament 2016', '/contests/3', '{\"Snowflake\": 2, \"Copying\": 3}', '{\"cpp\": \"C++\"}', '200', 0);
+('3', '2017-02-28 C group', '/contests/3', '{\"suma\": 2, \"cross\": 3, \"parallelogram\": 4}', '{\"cpp\": \"C++\"}', '300', 1);
 
 -- --------------------------------------------------------
 
@@ -143,7 +143,7 @@ CREATE TABLE `QuizTasks` (
 --
 
 INSERT INTO `QuizTasks` (`ID`, `Question`, `Options`, `Answer`, `Hint`, `Points`) VALUES
-('1', 'What\'s TechEdu++ founder\'s name?', '{\"1\":\"Alex\",\"2\":\"Dimo\",\"3\":\"Marin\"}', '1', '', '1');
+('1', 'What\'s TechEdu++ founder\'s name?', '{\"1\":\"Alex\",\"2\":\"Dimo\",\"3\":\"Marin\"}', '1', 'There is one correct answer', '1');
 
 -- --------------------------------------------------------
 
@@ -162,14 +162,6 @@ CREATE TABLE `Submissions` (
   `Log` text NOT NULL,
   `CompileLog` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `Submissions`
---
-
-INSERT INTO `Submissions` (`ID`, `ContestID`, `TaskID`, `UserID`, `Code`, `Lang`, `Points`, `Log`, `CompileLog`) VALUES
-('0', '2', '1', 'alex@techedu.cf', '%23include+%3Ciostream%3E%0D%0A%0D%0Aint+main+%28%29%0D%0A%09std%3A%3Acout+%3C%3C+%22Hello%2C+C%2B%2B%5Cn%22%3B', 'cpp', 0, '[[\"WA\", 0]]', '%2Fvar%2Flocal%2Flib%2Fisolate%2F0%2Fbox%2Fsource.cpp%3A4%3A2%3A%20error%3A%20expected%20initializer%20before%20%E2%80%98std%E2%80%99%0A%20%20std%3A%3Acout%20%3C%3C%20%22Hello%2C%20C%2B%2B%5Cn%22%3B%0A%20%20%5E~~%0A'),
-('1', '2', '1', 'alex@techedu.cf', '%23include+%3Ciostream%3E%0D%0A%0D%0Aint+main+%28%29+%7B%0D%0A%09std%3A%3Acout+%3C%3C+%22Hello%2C+C%2B%2B%5Cn%22%3B%0D%0A%7D', 'cpp', 100, '[[\"OK\", 1]]', '');
 
 -- --------------------------------------------------------
 
@@ -197,9 +189,38 @@ CREATE TABLE `Tasks` (
 
 INSERT INTO `Tasks` (`ID`, `Name`, `DescriptionLink`, `TestsLink`, `Input`, `Output`, `Checker`, `StarNotation`, `MaxPoints`, `TL`, `ML`) VALUES
 ('1', 'Hello, C++', 'https://github.com/TechEducationPlusPlus/Tasks/blob/master/C%2B%2B/IO%20Stream/Hello_C%2B%2B/README.md', 'https://raw.githubusercontent.com/TechEducationPlusPlus/Tasks/master/C%2B%2B/IO%20Stream/Hello_C%2B%2B/tests/', 'hello.*.in', 'hello.*.sol', 'diff', '01', '100', '0.1s', '256M'),
-('2', 'Snowflack', 'https://github.com/TechEducationPlusPlus/Tasks/blob/master/C%2B%2B/WinterTournament/1-snowflake/author/snowflake-bg.pdf', 'https://raw.githubusercontent.com/TechEducationPlusPlus/Tasks/master/C%2B%2B/WinterTournament/1-snowflake/tests/', 'snowflake.*.in', 'snowflake.*.sol', 'diff', '01,02,03,04,05,06,07,08,09,10,11,12,13,14,15,16,17,18,19,20', '100', '1s', '256M'),
-('3', 'Copying', 'https://github.com/TechEducationPlusPlus/Tasks/blob/master/C%2B%2B/WinterTournament/3-copying/author/copying-bg.pdf', 'https://raw.githubusercontent.com/TechEducationPlusPlus/Tasks/master/C%2B%2B/WinterTournament/3-copying/tests/', 'copying.*.in', 'copying.*.sol', 'diff', '01,02,03,04,05,06,07,08,09,10,11,12,13,14,15,16,17,18,19,20', '100', '1s', '256M');
+('2', 
+	'Suma', 
+	'https://github.com/TechEducationPlusPlus/Tasks/blob/master/C%2B%2B/2017-02-28-tests%26authors-C/1-suma/author/suma.pdf',
+	'https://raw.githubusercontent.com/TechEducationPlusPlus/Tasks/master/C%2B%2B/2017-02-28-tests%26authors-C/1-suma/tests/', 
+	'suma.*.in', 'suma.*.sol', 
+	'diff', 
+	'01,02,03,04,05,06,07,08,09,10,11,12,13,14,15,16,17,18,19,20', 
+	'100', 
+	'1s', 
+	'256M'),
+('3', 
+	'Cross', 
+	'https://github.com/TechEducationPlusPlus/Tasks/blob/master/C%2B%2B/2017-02-28-tests%26authors-C/2-cross/author/cross-bg.pdf',
+	'https://raw.githubusercontent.com/TechEducationPlusPlus/Tasks/master/C%2B%2B/2017-02-28-tests%26authors-C/2-cross/tests/', 
+	'cross.*.in', 'cross.*.sol', 
+	'diff', 
+	'01,02,03,04,05,06,07,08,09,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25', 
+	'100', 
+	'1s', 
+	'256M'),
+('4', 
+	'Parallelogram', 
+	'https://github.com/TechEducationPlusPlus/Tasks/blob/master/C%2B%2B/2017-02-28-tests%26authors-C/3-parallelogram/author/parallelogram-bg.pdf',
+	'https://raw.githubusercontent.com/TechEducationPlusPlus/Tasks/master/C%2B%2B/2017-02-28-tests%26authors-C/3-parallelogram/tests/', 
+	'parallelogram.*.in', 'parallelogram.*.sol', 
+	'diff', 
+	'01,02,03,04,05,06,07,08,09,10,11,12,13,14,15,16,17,18,19,20', 
+	'100', 
+	'1s', 
+	'256M')
 
+;
 -- --------------------------------------------------------
 
 --

@@ -16,7 +16,7 @@
 			echo "You are CHEATER";
 			return;
 		}	
-		$html_code = implode ('', file (__DIR__ . '/submit_template.php'));
+		$html_code = implode ('', file (__DIR__ . '/../submit_template.php'));
 		if (isset ($_COOKIE["name"]))
 			$html_code = str_replace ('Hi', 'Hi, ' . $_COOKIE["name"], $html_code);
 		$html_code = str_replace ('{{ID}}', $ID, $html_code);
