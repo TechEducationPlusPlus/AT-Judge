@@ -44,6 +44,7 @@ const string compile_error = "Compilation error";
 
 void eval (submit curr, size_t boxId)
 {
+	curr.asEvaluating ();
 	is_free_box [boxId] = false;
 	//cout << "KUCHE MRUSNO, BACHKAM" << endl;
 	try

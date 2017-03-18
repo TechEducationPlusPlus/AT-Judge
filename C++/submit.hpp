@@ -62,6 +62,23 @@ struct submit
 		printf ("Update: ID=%s Points=%d Log=\"%s\" Compiler:\"%s\"\n", id.c_str (), points, log.c_str (), compile.c_str ());
 	}
 
+	void asEvaluating ()
+	{
+		MYSQL_RES *res;
+		MYSQL_ROW row;
+
+		{
+			char buffer [1024];
+			sprintf (buffer, "UPDATE `Submissions` SET `IsEvaluating`=1 WHERE `ID`=%s", id.c_str ());
+
+			if (mysql_query (con, buffer)) 
+			{
+				mysql_close (con);
+			}
+		}
+
+	}
+
 	string getChecker ()
 	{
 		return string ("localhost:49152");

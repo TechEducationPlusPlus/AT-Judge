@@ -163,6 +163,8 @@ CREATE TABLE `Submissions` (
   `CompileLog` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+ALTER TABLE `Submissions` ADD `IsEvaluating` BOOLEAN NOT NULL AFTER `CompileLog`;
+
 -- --------------------------------------------------------
 
 --

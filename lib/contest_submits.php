@@ -18,7 +18,7 @@
 		'<div class="table-responsive"> <table class="table">' .
 		'<tr><th>ID</th><th>Task</th><th>Code</th><th>Language</th><th>Points</th></tr>';
 
-		$sql = "SELECT * FROM `Submissions` WHERE (`UserID`='" . $_COOKIE["email"] . "' AND `ContestID`='" . $ContestID . "' AND `Points` IS NULL) ORDER BY `ID` DESC";
+		$sql = "SELECT * FROM `Submissions` WHERE (`UserID`='" . $_COOKIE["email"] . "' AND `ContestID`='" . $ContestID . "' AND `Points` IS NULL) ORDER BY (`ID` + 0) DESC";
 		$result = $conn->query($sql);
 		//echo $sql;
 		if ($result->num_rows > 0) 
@@ -30,7 +30,7 @@
 			}
 		} 
 
-		$sql = "SELECT * FROM `Submissions` WHERE (`UserID`='" . $_COOKIE["email"] . "' AND `ContestID`='" . $ContestID . "' And `Points` IS NOT NULL) ORDER BY `Points` DESC";
+		$sql = "SELECT * FROM `Submissions` WHERE (`UserID`='" . $_COOKIE["email"] . "' AND `ContestID`='" . $ContestID . "' And `Points` IS NOT NULL) ORDER BY (`ID` + 0) DESC";
 		$result = $conn->query($sql);
 		//echo $sql;
 		if ($result->num_rows > 0) 

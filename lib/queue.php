@@ -23,7 +23,7 @@
 			while($row = $result->fetch_assoc()) 
 			{
 				$table = $table .
-				'<tr><td>' . $row["ID"] . '</td><td>' . $row["ContestID"] . '</td><td>' . $row["TaskID"] . '</td><td>' . $row ["UserID"] . '</td><td>Source code</td><td>'. $row ["Lang"] . '</td><td>' . $row["Points"] . '</td></tr>';
+				'<tr><td>' . $row["ID"] . '</td><td>' . $row["ContestID"] . '</td><td>' . $row["TaskID"] . '</td><td>' . $row ["UserID"] . '</td><td>Source code</td><td>'. $row ["Lang"] . '</td><td>' . (($row["IsEvaluating"]==1)?"evaluating...":"") . '</td></tr>';
 			}
 		} 
 		$table = $table .
